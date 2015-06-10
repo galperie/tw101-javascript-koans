@@ -34,3 +34,51 @@
  */
 
 // Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function fixTranslation(hindi,urdu,english) {
+    var hindiText = "";
+    for(var i = 0; i < hindi.length; i++) {
+        hindiText = hindiText + " " + hindi[i];
+    }
+    changeElementText("#incorrectText1", hindiText);
+
+    var urduText = "";
+    for(var i = 0; i < urdu.length; i++) {
+            urduText = urduText + " " + urdu[i];
+    }
+    changeElementText("#incorrectText2", urduText);
+
+    var englishText = "";
+    for(var i = 0; i < english.length; i++) {
+        englishText = englishText + " " + english[i];
+    }
+    changeElementText("#incorrectText3", englishText);
+
+    var newText = "";
+    var totalCount = 0;
+    for(var i = 0; i < hindi.length; i++) {
+            totalCount++;
+            newText = newText + " " + hindi[i];
+    }
+    newText = newText + " \n";
+
+    for(var i = urdu.length-1; i >= 0; i--) {
+       console.log(i);
+       totalCount++;
+       newText = newText + " " + urdu[i];
+    }
+
+    newText = newText + " \n";
+    console.log(newText);
+    for(var i = 0; i < english.length; i++) {
+            totalCount++;
+            newText = newText + " " + english[i];
+    }
+    changeElementText("#correctText", newText);
+    changeElementText("#totalTextCount", totalCount);
+
+}
+

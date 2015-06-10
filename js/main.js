@@ -13,6 +13,8 @@ $(document).ready(function() {
     countMoney(20, 50, 10, 20, 13, 500);
 
     // Problem 5
-    // call your problem 5 code here
+    fixTranslation(["zara", "dhyaan", "dein"],
+                        ["mazarat", "chahenge"],
+                        ["attention", "please"]);
 
 });
