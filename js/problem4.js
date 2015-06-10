@@ -26,4 +26,24 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function countMoney() {
+    var total = 0;
+
+    var newNotes = "";
+
+    for(var i = 0; i < arguments.length; i++) {
+        newNotes = newNotes + " " + arguments[i];
+        if(arguments[i] != 5 && arguments[i] != 10 && arguments[i] != 20 && arguments[i] != 50
+         && arguments[i] != 100 && arguments[i] != 500 && arguments[i] != 1000)
+            break;
+        else total += arguments[i];
+    }
+
+    changeElementText("#notes", newNotes);
+
+    changeElementText("#totalMoney", total);
+}
